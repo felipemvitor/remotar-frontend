@@ -1,0 +1,33 @@
+.nav{
+    background-color: #1B2A47!important;
+}
+
+.navbar{
+    width: 100%;
+}
+
+.nav-text{
+    color: rgba(255,255,255,0.5)
+}
+
+.navbar-brand{
+    text-align: left;
+}
+
+.dropdown:hover{
+    background: #152036;
+    border-radius: 4px;
+}
+
+.dropdown,  .dropdown-toggle, .dropdown-item{
+    color: white;
+}
+
+.dropdown-item:hover{
+    background: #152036;
+    color: white;
+}
+
+.dropdown-menu{
+    background-color: #1B2A47 !important;    
+}

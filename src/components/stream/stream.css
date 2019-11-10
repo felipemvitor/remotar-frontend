@@ -1,0 +1,32 @@
+.stream-container{
+    margin: 8px!important;
+
+}
+.stream-video{
+    width: 70%;
+    float:left;
+    background: #1b2a47;
+}
+
+.stream-dashboard{
+    width: 30%;
+    display: inline-block;
+    padding-left: 8px;
+    overflow-y: auto;
+}
+
+@media (max-width: 998px){
+    .stream-video {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    .stream-dashboard {
+        width: 100%;
+        display: inline-grid;
+        padding: 0px;
+        grid-template-columns: repeat(4, auto);
+        grid-auto-rows: minmax(min-content, max-content);
+        overflow-y: unset;
+    }
+}

@@ -1,0 +1,51 @@
+.client-card{
+	width: fit-content;
+	padding: 0;
+	background: #1b2a47;
+}
+
+.client-card-body{
+	padding: 0;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center
+}
+
+.client-logo{
+	width: 40px;
+	display: inline-block;
+	margin: auto 20px;
+}
+
+.client-info{
+	display: inline-block;
+	padding: 20px;
+	color: white;
+	text-align: start;
+	width: 100%;
+}
+
+.client-name{
+	margin: 0px;
+	font-weight: bold;
+	font-size: 20px;
+	color:#24C79F;
+}
+
+.client-product{
+	margin: 0px;
+}
+
+.client-text-answer{
+	color: white;
+	display: inline-block;
+	height: 100%;
+	margin: auto 10px;
+	padding: 10px;
+}
+
+.client-text-answer:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}

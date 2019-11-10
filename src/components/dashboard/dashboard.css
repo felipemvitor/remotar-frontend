@@ -1,0 +1,37 @@
+.dashboard-card{
+    width: calc(100%-8px);
+	padding: 0;
+    background: #1b2a47;
+    margin: 0px 4px 4px 0px;
+}
+
+.dashboard-card-body{
+    padding: 16px;
+    width: 100%;
+    margin: 0;
+}
+
+.dashboard-title{
+	font-size: 16px;
+	text-transform: capitalize;
+	font-weight: 700;
+	color: white;
+}
+
+.dashboard-info{
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.dashboard-value{
+	color: white;
+	font-weight: bold;
+	font-size: 16px;
+	display: inline-block;
+    width: auto;
+    margin: 0;
+}
+
+.dashboard-span{
+	color:#24C79F;
+}
