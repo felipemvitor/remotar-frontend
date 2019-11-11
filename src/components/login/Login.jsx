@@ -29,7 +29,7 @@ export default class navigation extends Component {
                             <Form.Group controlId="formBasicCheckbox">
                                 <Form.Check type="checkbox" label="Remember me" custom></Form.Check>
                             </Form.Group>
-                            <Button variant="outline-primary" type="submit" className="login-button">
+                            <Button variant="outline-primary" type="submit" className="button-green">
                                 Login
                             </Button>
                         </Form>

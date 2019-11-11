@@ -41,29 +41,3 @@
     border-color: #009571 !important;
     background-color: #24C79F !important;
 }
-
-
-.login-button{
-    border-color: #24C79F;
-    color: #24c79f;
-    margin-top: 20px;
-    padding: 6px 40px;
-    border-radius: 20px;
-}
-
-.login-button:hover, .login-button:active{
-    border-color: #24C79F;
-    color: white;
-    transition: background-color 0.5s ease;
-    background-color: #24C79F;
-}
-
-.login-button:active{
-    border-color: #24C79F !important;
-    color: white;
-    background-color: #24C79F !important;
-}
-
-.login-button:focus {
-    box-shadow: 0 0 0 0.2rem #009571 !important;
-}
