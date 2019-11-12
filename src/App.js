@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
-import Stream from './components/stream/Stream.jsx'
-import Navigation from './components/navigation/Navigation.jsx'
+import Routes from './routes';
 // import Login from './components/login/Login.jsx'
 // import Dashboard from './components/dashboard/Dashboard';
 // import Client from './components/client/Client';
@@ -26,16 +25,7 @@ function App() {
 
     return (
         <div className="App">
-            <Navigation ></Navigation>
-            <Stream></Stream>
-            <div className="main-container">
-                {/* {loadClient()} */}
-            </div>
-
-            {/*<Login></Login>
-			<Dashboard name="Voltagem" value="200" unit="V"></Dashboard>
-			<Client></Client>*/}
-
+            <Routes />
         </div>
     )
 }
