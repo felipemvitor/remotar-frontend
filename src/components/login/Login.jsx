@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Card, Form, Button } from 'react-bootstrap';
+import { Redirect } from 'react-router-dom'
 import './login.css'
+import { isAuthenticated } from '../../auth.js'
 
 export default class navigation extends Component {
 
@@ -11,19 +13,12 @@ export default class navigation extends Component {
 
     componentDidMount() {
         const data = sessionStorage.getItem("login")
-        console.log(data)
 
         if (data) {
             const login = JSON.parse(data)
 
             if (login.remember) {
-                console.log('componentDidMount: ' + login.remember)
-
-
-                console.log('login: ' + login.remember)
-                console.log('login: ' + login.email)
-                console.log('login: ' + login.password)
-
+                console.log(isAuthenticated)
                 this.setState({
                     email: login.email,
                     password: login.password,
@@ -42,13 +37,21 @@ export default class navigation extends Component {
         sessionStorage.setItem('login', JSON.stringify({
             email: email,
             password: password,
-            remember: remember
+            remember: remember,
+            auth: true
         }))
+    }
+
+    renderRedirect = () => {
+        if (isAuthenticated) {
+            return <Redirect to="/" />
+        }
     }
 
     render() {
         return (
             <div className="login-container">
+                {this.renderRedirect()}
                 <Card className="login-card">
                     <Card.Title className="login-card-title">Sign In</Card.Title>
                     <Card.Body>
@@ -58,7 +61,7 @@ export default class navigation extends Component {
                                 <Form.Control type="email" placeholder="Enter your email address"
                                     className="login-form-control"
                                     defaultValue={this.state.email}
-                                    ref={element => this.inputEmail = element}/>
+                                    ref={element => this.inputEmail = element} />
                             </Form.Group>
 
                             <Form.Group>
