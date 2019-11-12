@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Card, Form, Button } from 'react-bootstrap';
 import { Redirect } from 'react-router-dom'
 import './login.css'
-import { isAuthenticated } from '../../auth.js'
+import { auth, isAuthenticated } from '../../auth.js'
 
 export default class navigation extends Component {
 
@@ -37,9 +37,10 @@ export default class navigation extends Component {
         sessionStorage.setItem('login', JSON.stringify({
             email: email,
             password: password,
-            remember: remember,
-            auth: true
+            remember: remember
         }))
+
+        sessionStorage.setItem('authentication', JSON.stringify({ auth: true }))
     }
 
     renderRedirect = () => {

@@ -13,9 +13,9 @@
 }
 
 .home-image{
-    /* width: auto; */
-    /* height: calc(100%-324px); */
     height: calc(100vh - 340px);
+    min-height: 200px;
+    max-height: 400px;
     margin: 40px auto;
 }
 

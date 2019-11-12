@@ -1,9 +1,12 @@
-const data = sessionStorage.getItem('login')
+const auth = 'authentication'
+
+const data = sessionStorage.getItem(auth)
 var isAuthenticated = false
 
 if (data) {
-    const login = JSON.parse(data)
-    isAuthenticated = login ? login.auth : false
+    console.log(data)
+    const authentication = JSON.parse(data)
+    isAuthenticated = authentication ? authentication.auth : false
 }
 
-export { isAuthenticated }
+export { auth, isAuthenticated }
