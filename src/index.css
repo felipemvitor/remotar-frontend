@@ -30,3 +30,28 @@ code {
 ::-webkit-scrollbar-thumb:hover {
   background: #009571; 
 }
+
+.button-green{
+    border-color: #24C79F;
+    color: #24c79f;
+    margin-top: 20px;
+    padding: 6px 40px;
+    border-radius: 20px;
+}
+
+.button-green:hover, .button-green:active{
+    border-color: #24C79F;
+    color: white;
+    transition: background-color 0.5s ease;
+    background-color: #24C79F;
+}
+
+.button-green:active{
+    border-color: #24C79F !important;
+    color: white;
+    background-color: #24C79F !important;
+}
+
+.button-green:focus {
+    box-shadow: 0 0 0 0.2rem #009571 !important;
+}

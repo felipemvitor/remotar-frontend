@@ -17,7 +17,8 @@ export default class navigation extends Component {
             <Navbar className="nav" bg="dark" variant="dark">
                 <Container>
                     <Navbar>
-                        <Navbar.Brand href="#" className="nav-text">RemoteAR</Navbar.Brand>
+                        <Navbar.Brand href="#" className="nav-text"><img src={process.env.PUBLIC_URL + '/img/remotar_text.png'} alt="" height="30"></img></Navbar.Brand>
+                        {/* <Navbar.Brand href="#" className="nav-text">RemoteAR</Navbar.Brand> */}
                     </Navbar>
                 </Container>
                 <Navbar.Toggle />

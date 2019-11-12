@@ -75,7 +75,7 @@ export default class navigation extends Component {
                                     ref={element => this.inputRemember = element}>
                                 </Form.Check>
                             </Form.Group>
-                            <Button variant="outline-primary" type="submit" className="login-button"
+                            <Button variant="outline-primary" type="submit" className="button-green"
                                 onClick={this.login}>
                                 Login
                             </Button>
