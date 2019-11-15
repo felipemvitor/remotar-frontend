@@ -5,17 +5,11 @@ import ReactResizeDetector from 'react-resize-detector'
 import Dashboard from '../dashboard/Dashboard'
 import Navigation from '../navigation/Navigation'
 import Client from '../client/Client';
+import {socket} from '../../socket/Socket'
 
 export default class Stream extends Component {
 
-    dashboards = [
-        { name: 'Voltagem', value: 5, unit: 'V' },
-        { name: 'Corrente', value: 5, unit: 'A' },
-        { name: 'Potência Ativa Total', value: 5, unit: 'W' },
-        { name: 'Potência Aparente Total', value: 5, unit: 'W' },
-        { name: 'Potência Reativa Total', value: 5, unit: 'W' },
-        { name: 'Fator de Potência Total', value: 5, unit: 'W' }
-    ]
+    dashboards = []
 
     clients = [
         { name: 'Client', product: 'Product' },
@@ -35,8 +29,8 @@ export default class Stream extends Component {
     }
 
     loadClientData = () => {
-        return this.dashboards.map(d => {
-            return <Dashboard name={d.name} value={d.value} unit={d.unit}></Dashboard >
+        return this.state.dashboards.map(d => {
+            return <Dashboard name={d.name} value={d.value} key={d.name}></Dashboard >
         })
     }
 
@@ -58,14 +52,26 @@ export default class Stream extends Component {
     onResize = (width) => {
         let height = (width / 4) * 3
         this.setDimension(width, height)
+        console.log(`Size: (${width}, ${height})`)
     }
 
     constructor(props) {
         super(props);
         this.state = {
             streamWidth: '0',
-            streamHeight: '0'
+            streamHeight: '0',
+            dashboards: [],
+            clients: [],
+            stream: ''
         };
+    }
+
+    componentDidMount() {
+        socket.on('data', (data) => {        
+            this.setState({
+                dashboards: data
+            })
+        })
     }
 
     render() {
@@ -73,16 +79,16 @@ export default class Stream extends Component {
             <div>
                 <Navigation />
                 <div className="stream-container">
-                    <div className="stream-clients" style={{ height: this.state.height }}>
+                    <div className="stream-clients">
                         <p className="stream-clients-title">Chamados</p>
                         {this.loadClients()}
                     </div>
-                    <div className="stream-video" style={{ height: this.state.height }}>
+                    <div className="stream-video">
                         <ReactResizeDetector handleWidth onResize={(width) => this.onResize(width)}>
                             <Video width={this.state.streamWidth} height={this.state.streamHeight} style={{ background: 'green' }}></Video>
                         </ReactResizeDetector>
                     </div>
-                    <div className="stream-dashboard" style={{ height: this.state.height }}>
+                    <div className="stream-dashboard">
                         {this.loadClientData()}
                     </div>
                 </div >

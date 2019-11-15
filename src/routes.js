@@ -5,7 +5,6 @@ import { isAuthenticated } from './auth'
 import Login from './components/login/Login.jsx'
 import Home from './components/home/Home.jsx'
 import PageNotFound from './components/page-not-found/PageNotFound.jsx'
-import ClientsPanel from './components/client/clients-panel/ClientsPanel'
 import Stream from './components/stream/Stream.jsx'
 
 const home = () => <Home />

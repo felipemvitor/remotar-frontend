@@ -1,14 +1,17 @@
 .stream-container{
     margin: 8px!important;
+    height: calc(100vh - 90px);
 }
 
 .stream-clients{
     float: left;
+    height: calc(100vh-80px);
 }
 
 .stream-clients, .stream-dashboard{
     float: left;
     width: calc(20% - 8px);
+    height: 100%;
     padding: 8px;
     overflow-y: auto;
     border-radius: 4px;
@@ -17,6 +20,7 @@
 
 .stream-video{
     width: calc(60% - 8px);
+    height: 100%;
     float: left;
     background: var(--blue-medium);
     margin: 0 8px;

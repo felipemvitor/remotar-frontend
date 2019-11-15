@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './navigation.css'
 
-import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCog } from '@fortawesome/free-solid-svg-icons'
 import { auth } from '../../auth.js'

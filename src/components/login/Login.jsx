@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Card, Form, Button } from 'react-bootstrap';
 import { Redirect } from 'react-router-dom'
 import './login.css'
-import { auth, isAuthenticated } from '../../auth.js'
+import { isAuthenticated } from '../../auth.js'
 
 export default class navigation extends Component {
 
