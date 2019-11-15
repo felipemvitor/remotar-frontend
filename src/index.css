@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #152036;
+  background-color: var(--blue-dark);
   height: 100%;
 }
 
@@ -19,39 +19,39 @@ code {
 }
 
 ::-webkit-scrollbar-track{
-    background: #1b2a47;
+    background: var(--blue-medium);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #24C79F;
+  background: var(--green-medium); 
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #009571; 
+  background: var(--green-dark); 
 }
 
 .button-green{
-    border-color: #24C79F;
-    color: #24c79f;
+    border-color: var(--green-medium); 
+    color: var(--green-medium); 
     margin-top: 20px;
     padding: 6px 40px;
     border-radius: 20px;
 }
 
 .button-green:hover, .button-green:active{
-    border-color: #24C79F;
+    border-color: var(--green-medium); 
     color: white;
     transition: background-color 0.5s ease;
-    background-color: #24C79F;
+    background-color: var(--green-medium); 
 }
 
 .button-green:active{
-    border-color: #24C79F !important;
+    border-color: var(--green-medium) !important;
     color: white;
-    background-color: #24C79F !important;
+    background-color: var(--green-medium) !important;
 }
 
 .button-green:focus {
-    box-shadow: 0 0 0 0.2rem #009571 !important;
+    box-shadow: 0 0 0 0.2rem var(--green-dark) !important;
 }

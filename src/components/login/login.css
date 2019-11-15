@@ -8,7 +8,7 @@
 
 .login-card{
     width: 500px;
-    background: #1B2A47;
+    background: var(--blue-medium);
     color: white;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
     padding: 20px;
@@ -27,17 +27,17 @@
 }
 
 .login-form-control{
-    background-color: #152036;
+    background-color: var(--blue-dark);
     color: white;
 }
 
 .login-form-control:focus{
-    background-color: #152036;
+    background-color: var(--blue-dark);
     color: white;
 }
 
 
 .custom-control-input:checked~.custom-control-label::before{
-    border-color: #009571 !important;
-    background-color: #24C79F !important;
+    border-color: var(--green-dark) !important;
+    background-color: var(--green-medium) !important;
 }

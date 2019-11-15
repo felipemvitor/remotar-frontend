@@ -1,7 +1,7 @@
 .dashboard-card{
     width: calc(100%-8px);
 	padding: 0;
-    background: #1b2a47;
+    background: var(--blue-dark);
     margin: 0px 4px 4px 0px;
 }
 
@@ -33,5 +33,5 @@
 }
 
 .dashboard-span{
-	color:#24C79F;
+	color: var(--green-medium);
 }

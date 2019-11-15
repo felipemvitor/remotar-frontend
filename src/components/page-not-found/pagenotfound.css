@@ -1,0 +1,21 @@
+.not-found-image{
+    margin-top: 40px;
+    width: 800px;
+}
+
+.not-found-title{
+    margin-top: 24px;
+    font-size: 56px;
+    color: white;
+}
+
+.not-found-text{
+    color: white;
+    margin-top: 16px;
+}
+
+@media (max-width: 998px){
+    .not-found-image{
+        width: calc(100vw - 198px);
+    }
+}

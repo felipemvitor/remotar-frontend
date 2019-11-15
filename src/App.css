@@ -19,13 +19,21 @@
 }
 
 .App-link {
-  color: #09d3ac;
+  color: var(--green-medium);
 }
 
 .main-container{
     padding: 20px;
 }
 
+:root{
+    --blue-dark: #152036;
+    --blue-medium: #1B2A47;
+    --green-medium:#24C79F;
+    --green-dark: #009571;
+}
+
 :root, #root {
-    height: 100% 
+    height: 100%;
+    
 }

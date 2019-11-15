@@ -1,5 +1,5 @@
 .nav{
-    background-color: #1B2A47!important;
+    background-color: var(--blue-medium)!important;
 }
 
 .navbar{
@@ -15,7 +15,7 @@
 }
 
 .dropdown:hover{
-    background: #152036;
+    background: var(--blue-dark);
     border-radius: 4px;
 }
 
@@ -24,7 +24,7 @@
 }
 
 .dropdown-item:hover{
-    background: #152036;
+    background: var(--blue-dark);
     color: white;
 }
 

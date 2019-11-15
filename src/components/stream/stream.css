@@ -5,7 +5,7 @@
 .stream-video{
     width: 70%;
     float:left;
-    background: #1b2a47;
+    background: var(--blue-medium);
 }
 
 .stream-dashboard{
