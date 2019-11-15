@@ -17,10 +17,10 @@ export default class Client extends Component {
 				<Card.Body className="client-card-body">
 					<img src={`${process.env.PUBLIC_URL}/img/remotar_icon.png`} className="client-logo"></img>
 					<div className="client-info">
-						<p className="client-name">Client name</p>
-						<p className="client-product">Product name</p>
+						<p className="client-name">{this.props.name}</p>
+						<p className="client-product">{this.props.product}</p>
 					</div>
-					<p className="client-text-answer">Answer</p>
+					<p className="client-text-answer">Atender</p>
 				</Card.Body>
 			</Card>
 				)

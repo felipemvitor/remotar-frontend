@@ -18,7 +18,7 @@ export default class home extends Component {
                     <p className="home-title"> Welcome to </p>
                     <img src={process.env.PUBLIC_URL + '/img/remotar_logo.png'} alt="" className="home-image"></img>
 
-                    <Button variant="outline-primary" type="submit" className="button-green home-button" href="/clients">
+                    <Button variant="outline-primary" type="submit" className="button-green home-button" href="/stream">
                         Start Working
                     </Button>
                 </div>

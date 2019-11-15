@@ -6,11 +6,12 @@ import Login from './components/login/Login.jsx'
 import Home from './components/home/Home.jsx'
 import PageNotFound from './components/page-not-found/PageNotFound.jsx'
 import ClientsPanel from './components/client/clients-panel/ClientsPanel'
+import Stream from './components/stream/Stream.jsx'
 
 const home = () => <Home />
-const clients = () => <ClientsPanel />
 const login = () => <Login />
 const notFound = () => <PageNotFound />
+const stream = () => <Stream />
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
     <Route {...rest} render={props =>
@@ -27,7 +28,7 @@ const Routes = () => (
     <BrowserRouter>
         <Switch>
             <PrivateRoute exact path="/" component={home} />
-            <PrivateRoute exact path="/clients" component={clients} />
+            <PrivateRoute exact path="/stream" component={stream} />
             <Route exact path="/auth" component={login} />
             <Route component={notFound}></Route>
         </Switch>

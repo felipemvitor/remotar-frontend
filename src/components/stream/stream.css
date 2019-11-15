@@ -1,20 +1,35 @@
 .stream-container{
     margin: 8px!important;
-
 }
-.stream-video{
-    width: 70%;
-    float:left;
+
+.stream-clients{
+    float: left;
+}
+
+.stream-clients, .stream-dashboard{
+    float: left;
+    width: calc(20% - 8px);
+    padding: 8px;
+    overflow-y: auto;
+    border-radius: 4px;
     background: var(--blue-medium);
 }
 
-.stream-dashboard{
-    width: 30%;
-    display: inline-block;
-    padding-left: 8px;
-    overflow-y: auto;
+.stream-video{
+    width: calc(60% - 8px);
+    float: left;
+    background: var(--blue-medium);
+    margin: 0 8px;
+    border-radius: 4px;
+    padding: 8px;
 }
 
+.stream-clients-title{
+    color: white;
+    font-size: 24px;
+}
+
+/* 
 @media (max-width: 998px){
     .stream-video {
         width: 100%;
@@ -29,4 +44,4 @@
         grid-auto-rows: minmax(min-content, max-content);
         overflow-y: unset;
     }
-}
+} */

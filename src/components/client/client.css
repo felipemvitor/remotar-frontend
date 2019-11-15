@@ -1,7 +1,8 @@
 .client-card{
-	width: fit-content;
+	width: 100%;
 	padding: 0;
-	background: var(--blue-medium);
+    background: var(--blue-dark);
+    margin: 2px 0 !important;
 }
 
 .client-card-body{
@@ -31,6 +32,9 @@
 	font-weight: bold;
 	font-size: 20px;
 	color: var(--green-medium);
+  white-space: initial;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .client-product{
