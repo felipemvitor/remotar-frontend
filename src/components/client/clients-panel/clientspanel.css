@@ -3,3 +3,22 @@
     margin-top: 20px;
     font-size: 40px;
 }
+
+.clients-panel{
+    height: calc(100vh - 94px);
+}
+
+.clients-panel-empty-list{
+    height: calc(100% - 92px);
+    line-height: 100%;
+    background: var(--blue-medium);
+    margin: 16px;
+    display: flex;
+}
+
+.clients-panel-empty-list-text{
+    color: white;
+    line-height: 100%;
+    margin: auto;
+    text-align: center;
+}

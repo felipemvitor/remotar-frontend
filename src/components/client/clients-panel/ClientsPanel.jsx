@@ -4,7 +4,7 @@ import Navigation from '../../navigation/Navigation'
 
 export default class ClientsPanel extends Component {
 
-    clients = [{}]
+    clients = []
 
     constructor(props) {
         super(props)
@@ -15,15 +15,16 @@ export default class ClientsPanel extends Component {
         return (
             <div>
                 <Navigation />
-
-                <p className="clients-panel-title">Clientes disponíveis</p>
                 <div className="clients-panel">
+                    <p className="clients-panel-title">Clientes disponíveis</p>
 
                     {this.clients.length > 0 ? (
-                        <h1>Tem</h1>
-                    ) : (
-                            <div>
+                        <div className="clients-panel-list">
 
+                        </div>
+                    ) : (
+                            <div className="clients-panel-empty-list">
+                                <p className="clients-panel-empty-list-text">Nenhum cliente disponível</p>
                             </div>
                         )
                     }
