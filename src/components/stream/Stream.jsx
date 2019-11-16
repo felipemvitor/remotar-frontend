@@ -9,18 +9,22 @@ import {socket} from '../../socket/Socket'
 
 export default class Stream extends Component {
 
-    dashboards = []
+    dashboards = [
+        { name: "Tensão Real (Vr)", value: 42.0}, 
+        { name: "Corrente Real (Ir)", value: 75.0 }, 
+        { name: "Potência Ativa Total (Ptot)", value: 151.0 },
+        { name: "Potência Aparente Total (Stot)", value: 247.0 },
+        { name: "Potência Reativa Total (Qtot)", value: 160.25 },
+        { name: "Fator de Potência Total (FPtot)", value: 920.0 },
+        { name: "Rotação (RPM)", value: 920.0 }, 
+    ]
 
     clients = [
-        { name: 'Client', product: 'Product' },
-        { name: 'Client', product: 'Product' },
-        { name: 'Client', product: 'Product' },
-        { name: 'Client', product: 'Product' },
-        { name: 'Client', product: 'Product' }
+        { name: 'Exsto Tecnologia', product: 'Exsto Kit XE902' },
     ]
 
     loadClients = () => {
-        return this.clients.map(client => {
+        return this.state.clients.map(client => {
             return <Client
                 name={client.name}
                 product={client.product}>
@@ -60,8 +64,8 @@ export default class Stream extends Component {
         this.state = {
             streamWidth: '0',
             streamHeight: '0',
-            dashboards: [],
-            clients: [],
+            dashboards: this.dashboards,
+            clients: this.clients,
             stream: ''
         };
     }
@@ -80,7 +84,7 @@ export default class Stream extends Component {
                 <Navigation />
                 <div className="stream-container">
                     <div className="stream-clients">
-                        <p className="stream-clients-title">Chamados</p>
+                        <p className="stream-clients-title">Calls</p>
                         {this.loadClients()}
                     </div>
                     <div className="stream-video">
@@ -89,6 +93,7 @@ export default class Stream extends Component {
                         </ReactResizeDetector>
                     </div>
                     <div className="stream-dashboard">
+                        <p className="stream-dashboard-title">Client Data</p>
                         {this.loadClientData()}
                     </div>
                 </div >

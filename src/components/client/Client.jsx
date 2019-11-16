@@ -18,7 +18,7 @@ export default class Client extends Component {
 						<p className="client-name">{this.props.name}</p>
 						<p className="client-product">{this.props.product}</p>
 					</div>
-					<p className="client-text-answer">Atender</p>
+					<p className="client-text-answer">Answer</p>
 				</Card.Body>
 			</Card>
 				)

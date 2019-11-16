@@ -16,12 +16,12 @@
 .client-logo{
 	width: 40px;
 	display: inline-block;
-	margin: auto 20px;
+	margin: auto 12px;
 }
 
 .client-info{
 	display: inline-block;
-	padding: 20px;
+	padding: 8px;
 	color: white;
 	text-align: start;
 	width: 100%;
