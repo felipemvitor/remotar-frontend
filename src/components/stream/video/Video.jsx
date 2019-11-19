@@ -15,8 +15,8 @@ export default class Video extends Component {
         super(props);
         this.state = {
             stream: null,
-            width: 0,
-            height: 0
+            width: props.height,
+            height: props.width
         };
     }
 
@@ -28,7 +28,7 @@ export default class Video extends Component {
 
     render() {
         return (
-            <img width={this.state.width} height={this.state.height} alt="" src={this.state.stream} />
+            <img height={this.props.height} alt="" src={this.state.stream} />
         )
     }
 
@@ -99,7 +99,7 @@ export default class Video extends Component {
         // console.log(`data:image/jpeg;base64,${btoa(binary)}`)
 
         var video = `data:image/jpeg;base64,${btoa(binary)}`
-        
+
 
         if (this.state.width === 0 || this.state.height === 0) {
             var image = new Image()
@@ -108,9 +108,9 @@ export default class Video extends Component {
             this.setState({
                 stream: video,
                 width: image.width,
-                height:image.height
+                height: image.height
             })
-        }else{
+        } else {
             this.setState({
                 stream: video
             })

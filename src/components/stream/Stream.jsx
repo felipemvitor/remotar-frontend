@@ -62,11 +62,9 @@ export default class Stream extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            streamWidth: '0',
             streamHeight: '0',
             dashboards: this.dashboards,
-            clients: this.clients,
-            stream: ''
+            clients: this.clients
         };
     }
 
@@ -89,7 +87,7 @@ export default class Stream extends Component {
                     </div>
                     <div className="stream-video">
                         <ReactResizeDetector handleWidth onResize={(width) => this.onResize(width)}>
-                            <Video width={this.state.streamWidth} height={this.state.streamHeight} style={{ background: 'green' }}></Video>
+                            <Video height={this.state.streamHeight} style={{ background: 'green' }}></Video>
                         </ReactResizeDetector>
                     </div>
                     <div className="stream-dashboard">
