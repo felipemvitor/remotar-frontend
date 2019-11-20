@@ -28,8 +28,19 @@ export default class Video extends Component {
 
     render() {
         return (
-            <img height={this.props.height} alt="" src={this.state.stream} />
+            <img height={this.props.height} alt="" src={this.state.stream} onClick={this.sendCoordinates.bind(this)} />
         )
+    }
+
+    sendCoordinates = (event) => {
+        var x = event.nativeEvent.offsetX
+        var y = event.nativeEvent.offsetY
+
+        console.log(`Sending coordinates: (${x}, ${y})`)
+        socket.emit('plot', {
+            x: x,
+            y: y
+        })
     }
 
     streamVideo(stream) {

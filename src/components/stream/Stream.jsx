@@ -42,9 +42,6 @@ export default class Stream extends Component {
         const streamWidth = width - 20
         const streamHeight = height - 20
 
-        console.log('Stream Width: ' + streamWidth)
-        console.log('Stream Height: ' + streamHeight)
-
         this.setState({
             width: `${width}px`,
             height: `${height}px`,
@@ -56,7 +53,6 @@ export default class Stream extends Component {
     onResize = (width) => {
         let height = (width / 4) * 3
         this.setDimension(width, height)
-        console.log(`Size: (${width}, ${height})`)
     }
 
     constructor(props) {
@@ -87,7 +83,7 @@ export default class Stream extends Component {
                     </div>
                     <div className="stream-video">
                         <ReactResizeDetector handleWidth onResize={(width) => this.onResize(width)}>
-                            <Video height={this.state.streamHeight} style={{ background: 'green' }}></Video>
+                            <Video height={this.state.streamHeight}></Video>
                         </ReactResizeDetector>
                     </div>
                     <div className="stream-dashboard">
