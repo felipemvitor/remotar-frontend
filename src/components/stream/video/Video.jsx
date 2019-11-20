@@ -33,14 +33,19 @@ export default class Video extends Component {
     }
 
     sendCoordinates = (event) => {
-        var x = event.nativeEvent.offsetX
-        var y = event.nativeEvent.offsetY
+        const width = event.target.clientWidth
+        const height = event.target.clientHeight
 
-        console.log(`Sending coordinates: (${x}, ${y})`)
-        socket.emit('plot', {
-            x: x,
-            y: y
-        })
+        const x = event.nativeEvent.offsetX
+        const y = event.nativeEvent.offsetY
+
+        const coordinates = {
+            x: (x * 100) / width,
+            y: (y * 100) / height
+        }
+
+        console.log(`Sending coordinates: (${coordinates.x}, ${coordinates.y})`)
+        socket.emit('plot', coordinates)
     }
 
     streamVideo(stream) {
