@@ -5,37 +5,54 @@ import ReactResizeDetector from 'react-resize-detector'
 import Dashboard from '../dashboard/Dashboard'
 import Navigation from '../navigation/Navigation'
 import Client from '../client/Client';
-import {socket} from '../../socket/Socket'
+import { socket } from '../../socket/Socket'
 
 export default class Stream extends Component {
 
     dashboards = [
-        { name: "Tensão Real (Vr)", value: 42.0}, 
-        { name: "Corrente Real (Ir)", value: 75.0 }, 
+        { name: "Tensão Real (Vr)", value: 42.0 },
+        { name: "Corrente Real (Ir)", value: 75.0 },
         { name: "Potência Ativa Total (Ptot)", value: 151.0 },
         { name: "Potência Aparente Total (Stot)", value: 247.0 },
         { name: "Potência Reativa Total (Qtot)", value: 160.25 },
         { name: "Fator de Potência Total (FPtot)", value: 920.0 },
-        { name: "Rotação (RPM)", value: 920.0 }, 
+        { name: "Rotação (RPM)", value: 920.0 },
     ]
 
     clients = [
         { name: 'Exsto Tecnologia', product: 'Exsto Kit XE902' },
     ]
 
+    handleOnAnswerClick = () => {
+        console.log("Answer")
+        this.setState({
+            dashboards: this.dashboards,
+            answered: true
+        })
+
+
+        socket.on('data', (data) => {
+            this.setState({
+                dashboards: data
+            })
+        })
+    }
+
     loadClients = () => {
         return this.state.clients.map(client => {
             return <Client
                 name={client.name}
-                product={client.product}>
+                product={client.product}
+                onAnswer={this.handleOnAnswerClick}>
             </Client >
         })
     }
 
     loadClientData = () => {
-        return this.state.dashboards.map(d => {
-            return <Dashboard name={d.name} value={d.value} key={d.name}></Dashboard >
-        })
+        if (this.state.dashboards)
+            return this.state.dashboards.map(d => {
+                return <Dashboard name={d.name} value={d.value} key={d.name}></Dashboard >
+            })
     }
 
     setDimension(width, height) {
@@ -59,17 +76,9 @@ export default class Stream extends Component {
         super(props);
         this.state = {
             streamHeight: '0',
-            dashboards: this.dashboards,
-            clients: this.clients
+            clients: this.clients,
+            answered: false
         };
-    }
-
-    componentDidMount() {
-        socket.on('data', (data) => {        
-            this.setState({
-                dashboards: data
-            })
-        })
     }
 
     render() {
@@ -82,9 +91,14 @@ export default class Stream extends Component {
                         {this.loadClients()}
                     </div>
                     <div className="stream-video">
-                        <ReactResizeDetector handleWidth onResize={(width) => this.onResize(width)}>
-                            <Video height={this.state.streamHeight}></Video>
-                        </ReactResizeDetector>
+                        {
+                            this.state.answered ?
+                                <ReactResizeDetector handleWidth onResize={(width) => this.onResize(width)}>
+                                    <Video height={this.state.streamHeight}></Video>
+                                </ReactResizeDetector>
+                                : null
+                        }
+
                     </div>
                     <div className="stream-dashboard">
                         <p className="stream-dashboard-title">Client Data</p>

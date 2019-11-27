@@ -22,6 +22,7 @@ export default class Video extends Component {
 
     componentDidMount() {
         socket.on("stream", (data) => {
+            console.log('Stream')
             this.streamVideo(data)
         })
     }
